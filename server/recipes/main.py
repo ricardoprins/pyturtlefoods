@@ -1,8 +1,5 @@
-import os
 import config
-from typing import List
 import requests
-from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 
 
