@@ -18,14 +18,14 @@ const theme = createTheme({
 function App() {
   return (
     <div>
-      {/* <ThemeProvider theme={theme}> */}
-      <React.Fragment>
-        <Container maxWidth={false} disableGutters>
-          <CssBaseline />
-          <HomePage />
-        </Container>
-      </React.Fragment>
-      {/* </ThemeProvider> */}
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <Container maxWidth={false} disableGutters>
+            <CssBaseline />
+            <HomePage />
+          </Container>
+        </React.Fragment>
+      </ThemeProvider>
     </div>
   );
 }

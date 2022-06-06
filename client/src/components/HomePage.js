@@ -1,49 +1,78 @@
-import React from "react";
+import * as React from "react";
 
 // Material UI
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Grid, Paper } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 // Components
 import AppBar from "./Template/AppBar";
 
-function Dashboard() {
-  const SliderData = [
-    { title: "Item 1" },
-    { title: "Item 2" },
-    { title: "Item 3" },
-    { title: "Item 4" },
-  ];
+// Files
+import logo from "../images/pyturtlefoods.png";
 
+function Dashboard() {
   return (
     <Box
       sx={{
-        backgroundColor: "#cfe8fc",
-        height: "100vh",
+        backgroundColor: "#fcffea",
+        height: "100%",
         display: "flex",
         flexDirection: "column",
       }}
     >
       <AppBar />
-      <Box sx={{ backgroundColor: "#69B859", height: "20vh" }}>
+      <Box
+        sx={{
+          backgroundColor: "inherit",
+          height: "500px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img src={logo} alt="app logo" height="350px" width="350px" />
         <Typography
-          variant="h2"
+          variant="h4"
           sx={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          Welcome to ...
+          Welcome to PyTurtle Foods
         </Typography>
       </Box>
+      {/* Content Box */}
       <Box
         sx={{
-          // backgroundColor: "#59B8B4",
-          height: "80vh",
-          margin: "10px",
+          backgroundColor: "#fcf5e1",
+          height: "1800px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "stretch",
+          // margin: "10px",
         }}
       >
-        Home Page
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            backgroundColor: "#f4f7e1",
+            height: "400px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Grid item xs={4} sx={{ height: "300px", border: "1px solid red" }}>
+            xs=4
+          </Grid>
+          <Grid item xs={8} sx={{ height: "300px", border: "1px solid red" }}>
+            xs=8
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );
