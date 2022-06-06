@@ -16,6 +16,6 @@ querystring = {
 }
 
 @app.get('/query')
-async def get_recipes_by_ingredient(querystring: dict) -> dict:
+async def get_recipes_by_ingredient(querystring: dict="{}") -> dict:
     response = requests.request("GET", config.URL, headers=config.HEADERS,params=querystring)
     return(response.text)
