@@ -1,21 +1,17 @@
+from typing import Union
 from pydantic import BaseModel
 
 
 class FoodsBase(BaseModel):
     title: str
-    description: str | None = None
+    description: Union[str, None] = None
 
 
 class FoodsCreate(FoodsBase):
     pass
 
 
-class Item(FoodsBase):
+class Food(FoodsBase):
     id: int
     food_name: str
-    amount: int
-
-    class Config:
-        orm_mode = True
-
-
+    amount = int
