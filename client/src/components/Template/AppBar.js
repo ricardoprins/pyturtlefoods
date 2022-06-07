@@ -18,10 +18,11 @@ import {
 
 import MenuIcon from "@mui/icons-material/Menu";
 import AdbIcon from "@mui/icons-material/Adb";
+import AppBarIcon from "../../images/pyturtle_darker.png";
 
 const pages = [
-  { tabName: "Dishes Suggestion", url: "/dishes" },
   { tabName: "Your Foods", url: "/foods" },
+  { tabName: "Dishes Suggestion", url: "/dishes" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -50,7 +51,6 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -66,7 +66,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            pyturtle
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

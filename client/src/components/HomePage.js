@@ -47,7 +47,8 @@ function Dashboard() {
       <Box
         sx={{
           backgroundColor: "#fcf5e1",
-          height: "1800px",
+          // backgroundColor: "inherit",
+          height: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
@@ -59,19 +60,65 @@ function Dashboard() {
           container
           spacing={2}
           sx={{
-            backgroundColor: "#f4f7e1",
+            backgroundColor: "inherit",
             height: "400px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <Grid item xs={4} sx={{ height: "300px", border: "1px solid red" }}>
-            xs=4
+          <Grid
+            item
+            xs={4}
+            sx={{
+              height: "80%",
+            }}
+          ></Grid>
+          <Grid
+            item
+            xs={8}
+            sx={{
+              height: "80%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h5">
+              You will no longer have to worry about managing your foods anymore
+            </Typography>
           </Grid>
-          <Grid item xs={8} sx={{ height: "300px", border: "1px solid red" }}>
-            xs=8
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            backgroundColor: "inherit",
+            height: "400px",
+          }}
+        >
+          <Grid
+            item
+            xs={8}
+            sx={{
+              height: "80%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h5">
+              We also give recommendations of dishes you can make based on the
+              foods you have
+            </Typography>
           </Grid>
+          <Grid
+            item
+            xs={4}
+            sx={{
+              height: "80%",
+            }}
+          ></Grid>
         </Grid>
       </Box>
     </Box>

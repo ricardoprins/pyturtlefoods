@@ -2,12 +2,19 @@ import React from "react";
 
 // Material UI
 import { Typography, Box } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // Components
 import Carousel from "./Carousel";
 
 // Components
 import AppBar from "../Template/AppBar";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Montserrat", "cursive"].join(","),
+  },
+});
 
 function DishesRec() {
   const SliderData = [
@@ -18,38 +25,48 @@ function DishesRec() {
   ];
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "#cfe8fc",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <AppBar />
-      <Box sx={{ backgroundColor: "#69B859", height: "20vh" }}>
-        <Typography
-          variant="h2"
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          backgroundColor: "#fcffea",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <AppBar />
+        <Box
           sx={{
+            backgroundColor: "inherit",
+            height: "200px",
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          Welcome to ...
-        </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Dishes Recommendations
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            // backgroundColor: "#59B8B4",
+            height: "80vh",
+            margin: "10px",
+          }}
+        >
+          <Carousel items={SliderData} />
+        </Box>
       </Box>
-      <Box
-        sx={{
-          // backgroundColor: "#59B8B4",
-          height: "80vh",
-          margin: "10px",
-        }}
-      >
-        Recommendations
-        <Carousel items={SliderData} />
-      </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 
